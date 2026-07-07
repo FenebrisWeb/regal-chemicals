@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Wrapper from "./components/layout/wrapper";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,10 +15,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Regal Chemicals",
-  description: "Regal Chemicals — regalchemicals.co.uk",
+  description: "Regal Chemicals: regalchemicals.co.uk",
   openGraph: {
     title: "Regal Chemicals",
-    description: "Regal Chemicals — regalchemicals.co.uk",
+    description: "Regal Chemicals: regalchemicals.co.uk",
     images: ["/regal-chemicals-logo.png"],
   },
 };
@@ -32,7 +33,9 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <Wrapper>{children}</Wrapper>
+      </body>
     </html>
   );
 }

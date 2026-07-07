@@ -1,0 +1,42 @@
+import PlaceholderVisual from "@/app/components/ui/placeholder-visual";
+import { PHONE_NUMBERS, EMAIL, POSTAL_ADDRESS } from "@/app/data/contact";
+
+export default function ContactInfo() {
+  return (
+    <section className="bg-black/[0.03] py-16">
+      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
+        <PlaceholderVisual label="Contact Us" tone="brand" className="h-full min-h-[220px]" />
+
+        <div className="flex flex-col gap-3 rounded-2xl bg-white p-8">
+          <h3 className="text-lg font-bold text-black">Get in touch</h3>
+          <p className="text-sm font-bold text-black">Work and general inquiries</p>
+          <ul className="flex flex-col gap-1">
+            {PHONE_NUMBERS.map((phone) => (
+              <li key={phone.value}>
+                <a href={phone.href} className="text-sm font-medium text-black hover:text-[#2596be]">
+                  {phone.value}
+                </a>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-2 text-sm font-bold text-black">Email us at</p>
+          <a href={EMAIL.href} className="text-sm font-medium text-black hover:text-[#2596be]">
+            {EMAIL.value}
+          </a>
+        </div>
+
+        <div className="flex flex-col gap-3 rounded-2xl bg-white p-8">
+          <h3 className="text-lg font-bold text-black">Post address</h3>
+          <p className="text-sm font-bold text-black">{POSTAL_ADDRESS.company}</p>
+          <address className="text-sm font-medium not-italic text-black">
+            {POSTAL_ADDRESS.lines.map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
+          </address>
+        </div>
+      </div>
+    </section>
+  );
+}
