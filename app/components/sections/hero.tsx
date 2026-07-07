@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Button from "@/app/components/ui/button";
 import { HERO_SLIDES } from "@/app/data/hero-slides";
+import { slugify } from "@/app/lib/slug";
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 const SLIDE_COUNT = HERO_SLIDES.length;
@@ -56,7 +58,17 @@ export default function Hero() {
               style={{ width: `${100 / SLIDE_COUNT}%` }}
               className="flex min-h-[100svh] shrink-0 flex-col md:min-h-[calc(100svh-73px)] md:flex-row"
             >
-              <div className="relative min-h-[240px] flex-1 overflow-hidden bg-gradient-to-br from-[#2596be] to-[#07245a] sm:min-h-[320px] md:min-h-0 md:basis-1/2">
+              <div className="relative min-h-[240px] flex-1 overflow-hidden sm:min-h-[320px] md:min-h-0 md:basis-1/2">
+                <Image
+                  src={`https://picsum.photos/seed/${slugify(slide.visualLabel)}/1200/900`}
+                  alt={slide.visualLabel}
+                  fill
+                  priority={index === 0}
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-br from-[#2596be]/70 to-[#07245a]/80" />
+
                 {/* chemistry-themed decorative animation */}
                 <div className="pointer-events-none absolute inset-0" aria-hidden="true">
                   <span className="hero-bubble hero-bubble-1" />

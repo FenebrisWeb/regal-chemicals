@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { PRODUCT_SYSTEMS } from "@/app/data/systems";
-import { PHONE_NUMBERS, EMAIL, POSTAL_ADDRESS } from "@/app/data/contact";
+import { PHONE_NUMBERS, EMAILS, POSTAL_ADDRESS } from "@/app/data/contact";
 
 const SOCIAL_LINKS = [
   { label: "Facebook", href: "https://facebook.com" },
@@ -63,9 +63,15 @@ export default function Footer() {
         <div className="flex flex-col gap-3">
           <h3 className="text-sm font-bold uppercase tracking-[0.15em] text-[#2596be]">Contact</h3>
           <p className="text-sm font-bold text-white">{POSTAL_ADDRESS.company}</p>
-          <a href={EMAIL.href} className="text-sm font-medium text-white hover:text-[#2596be]">
-            {EMAIL.value}
-          </a>
+          <ul className="flex flex-col gap-1">
+            {EMAILS.map((email) => (
+              <li key={email.value}>
+                <a href={email.href} className="text-sm font-medium text-white hover:text-[#2596be]">
+                  {email.value}
+                </a>
+              </li>
+            ))}
+          </ul>
           <ul className="flex flex-col gap-1">
             {PHONE_NUMBERS.map((phone) => (
               <li key={phone.value}>

@@ -37,17 +37,20 @@ export default function HighlightCards() {
         {CARDS.map((card) => (
           <article
             key={card.title}
-            className="flex flex-col gap-4 rounded-2xl bg-black/[0.03] p-8"
+            className="overflow-hidden rounded-2xl bg-black/[0.03]"
           >
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">
-              {card.eyebrow}
-            </span>
-            <h3 className="text-2xl font-bold text-black">{card.title}</h3>
-            {card.description && <p className="text-sm font-medium text-black">{card.description}</p>}
-            <Button href={card.ctaHref} variant="dark" className="w-fit">
-              {card.ctaLabel}
-            </Button>
-            <PlaceholderVisual label={card.visualLabel} tone="brand" className="mt-2 h-40" />
+            <PlaceholderVisual label={card.visualLabel} tone="brand" className="h-64 rounded-none border-none sm:h-80" />
+
+            <div className="flex flex-col gap-4 p-8">
+              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">
+                {card.eyebrow}
+              </span>
+              <h3 className="text-2xl font-bold text-black">{card.title}</h3>
+              {card.description && <p className="text-sm font-medium text-black">{card.description}</p>}
+              <Button href={card.ctaHref} variant="dark" className="w-fit">
+                {card.ctaLabel}
+              </Button>
+            </div>
           </article>
         ))}
       </div>

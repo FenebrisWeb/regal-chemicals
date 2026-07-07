@@ -1,4 +1,4 @@
-export type ButtonVariant = "primary" | "dark" | "outline" | "outline-light";
+export type ButtonVariant = "primary" | "dark" | "light" | "outline" | "outline-light";
 
 export interface ButtonProps {
   href: string;

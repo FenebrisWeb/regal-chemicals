@@ -38,7 +38,7 @@ const CARDS: FeatureCard[] = [
 
 export default function FeatureCards() {
   return (
-    <section className="bg-white pb-16">
+    <section className="bg-white pb-16 pt-[50px]">
       <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
         {CARDS.map((card) => (
           <article key={card.title} className="flex flex-col gap-4 rounded-2xl bg-black/[0.03] p-6">

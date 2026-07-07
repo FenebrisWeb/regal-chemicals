@@ -1,18 +1,17 @@
 import type { ContactPoint } from "@/types/sections";
 
+// Demo placeholder data, to be replaced with real contact details later.
 export const PHONE_NUMBERS: ContactPoint[] = [
-  { label: "Phone", value: "+91 88850 99551", href: "tel:+918885099551" },
-  { label: "Phone", value: "+91 92463 99551", href: "tel:+919246399551" },
-  { label: "Phone", value: "+91 90304 32769", href: "tel:+919030432769" },
+  { label: "Phone", value: "+1 555 010 2020", href: "tel:+15550102020" },
+  { label: "Phone", value: "+1 555 010 2021", href: "tel:+15550102021" },
 ];
 
-export const EMAIL: ContactPoint = {
-  label: "Email",
-  value: "info@regalchemicals.co.uk",
-  href: "mailto:info@regalchemicals.co.uk",
-};
+export const EMAILS: ContactPoint[] = [
+  { label: "General Inquiries", value: "info@regalchemicals.co.uk", href: "mailto:info@regalchemicals.co.uk" },
+  { label: "Support", value: "support@regalchemicals.co.uk", href: "mailto:support@regalchemicals.co.uk" },
+];
 
 export const POSTAL_ADDRESS = {
   company: "Regal Chemicals",
-  lines: ["2nd Floor, Fairmount Fortune One", "212, Sanath Nagar", "Hyderabad, Telangana 500018", "India"],
+  lines: ["123 Demo Business Park", "Suite 400", "Springfield, ST 12345", "United States"],
 };

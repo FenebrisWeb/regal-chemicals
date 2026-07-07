@@ -1,5 +1,5 @@
 import PlaceholderVisual from "@/app/components/ui/placeholder-visual";
-import { PHONE_NUMBERS, EMAIL, POSTAL_ADDRESS } from "@/app/data/contact";
+import { PHONE_NUMBERS, EMAILS, POSTAL_ADDRESS } from "@/app/data/contact";
 
 export default function ContactInfo() {
   return (
@@ -20,9 +20,15 @@ export default function ContactInfo() {
             ))}
           </ul>
           <p className="mt-2 text-sm font-bold text-black">Email us at</p>
-          <a href={EMAIL.href} className="text-sm font-medium text-black hover:text-[#2596be]">
-            {EMAIL.value}
-          </a>
+          <ul className="flex flex-col gap-1">
+            {EMAILS.map((email) => (
+              <li key={email.value}>
+                <a href={email.href} className="text-sm font-medium text-black hover:text-[#2596be]">
+                  {email.value}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
 
         <div className="flex flex-col gap-3 rounded-2xl bg-white p-8">

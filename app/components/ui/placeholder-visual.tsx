@@ -1,18 +1,40 @@
+import Image from "next/image";
+import { slugify } from "@/app/lib/slug";
 import type { PlaceholderVisualProps } from "@/types/media";
 
-const TONE_CLASSES: Record<NonNullable<PlaceholderVisualProps["tone"]>, string> = {
-  light: "bg-black/5 text-black",
-  dark: "bg-[#07245a] text-white",
-  brand: "bg-gradient-to-br from-[#2596be] to-[#07245a] text-white",
+const TONE_OVERLAY: Record<NonNullable<PlaceholderVisualProps["tone"]>, string> = {
+  light: "from-black/40",
+  dark: "from-[#07245a]/70",
+  brand: "from-[#07245a]/70",
 };
 
-/** Stand-in for real photography/artwork until final assets are supplied. */
-export default function PlaceholderVisual({ label, className = "", tone = "light" }: PlaceholderVisualProps) {
+/**
+ * Demo photography stand-in via picsum.photos, seeded so the same label
+ * always resolves to the same image. Swap for real assets when available.
+ */
+export default function PlaceholderVisual({
+  label,
+  className = "",
+  tone = "light",
+  seed,
+  showLabel = true,
+}: PlaceholderVisualProps) {
+  const imageSeed = seed ?? slugify(label);
+
   return (
-    <div
-      className={`flex items-center justify-center rounded-2xl border border-black/10 p-6 text-center text-sm font-bold uppercase tracking-wide ${TONE_CLASSES[tone]} ${className}`}
-    >
-      {label}
+    <div className={`relative overflow-hidden rounded-2xl border border-black/10 ${className}`}>
+      <Image
+        src={`https://picsum.photos/seed/${imageSeed}/800/600`}
+        alt={label}
+        fill
+        sizes="(min-width: 1024px) 33vw, 100vw"
+        className="object-cover"
+      />
+      {showLabel && (
+        <div className={`absolute inset-0 flex items-end bg-gradient-to-t ${TONE_OVERLAY[tone]} to-transparent p-4`}>
+          <span className="text-xs font-bold uppercase tracking-wide text-white">{label}</span>
+        </div>
+      )}
     </div>
   );
 }
