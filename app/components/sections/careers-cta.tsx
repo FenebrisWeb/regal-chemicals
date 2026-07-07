@@ -1,9 +1,12 @@
 import Button from "@/app/components/ui/button";
+import AmbientBubbles from "@/app/components/ui/ambient-bubbles";
 
 export default function CareersCta() {
   return (
-    <section className="bg-[#07245a] py-14">
-      <div className="mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
+    <section className="relative overflow-hidden bg-[#07245a] py-14">
+      <AmbientBubbles tone="dark" />
+
+      <div className="relative mx-auto flex max-w-6xl flex-col items-start gap-6 px-6 md:flex-row md:items-center md:justify-between">
         <div>
           <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">Get Started</span>
           <h2 className="mt-2 max-w-md text-2xl font-bold text-white sm:text-3xl">

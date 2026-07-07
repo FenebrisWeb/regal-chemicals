@@ -6,12 +6,15 @@ import FeatureCards from "@/app/components/sections/feature-cards";
 import RecentPosts from "@/app/components/sections/recent-posts";
 import CareersCta from "@/app/components/sections/careers-cta";
 import ContactInfo from "@/app/components/sections/contact-info";
+import Reveal from "@/app/components/ui/reveal";
 
 export default function Home() {
   return (
     <>
       <Hero />
-      <BrandTrust />
+      <Reveal>
+        <BrandTrust />
+      </Reveal>
       {/* <CtaStrip
         title="Ready to Start Your Next Project?"
         description="Talk to our technical team about the right Regal system for your application."
@@ -21,7 +24,9 @@ export default function Home() {
         secondaryHref="/products"
       /> */}
       <HighlightCards />
-      <CareersCta />
+      <Reveal>
+        <CareersCta />
+      </Reveal>
       <FeatureCards />
       <ContactInfo />
     </>

@@ -1,5 +1,7 @@
 import Button from "@/app/components/ui/button";
 import PlaceholderVisual from "@/app/components/ui/placeholder-visual";
+import AmbientBubbles from "@/app/components/ui/ambient-bubbles";
+import Reveal from "@/app/components/ui/reveal";
 
 interface FeatureCard {
   title: string;
@@ -38,17 +40,21 @@ const CARDS: FeatureCard[] = [
 
 export default function FeatureCards() {
   return (
-    <section className="bg-white pb-16 pt-[50px]">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
-        {CARDS.map((card) => (
-          <article key={card.title} className="flex flex-col gap-4 rounded-2xl bg-black/[0.03] p-6">
-            <h3 className="text-xl font-bold text-black">{card.title}</h3>
-            <p className="flex-1 text-sm font-medium text-black">{card.description}</p>
-            <PlaceholderVisual label={card.visualLabel} tone="light" className="h-32" />
-            <Button href={card.ctaHref} variant="dark" className="w-fit">
-              {card.ctaLabel}
-            </Button>
-          </article>
+    <section className="relative overflow-hidden bg-white pb-16 pt-[50px]">
+      <AmbientBubbles tone="brand" className="opacity-60" />
+
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
+        {CARDS.map((card, index) => (
+          <Reveal key={card.title} delayMs={index * 120}>
+            <article className="flex h-full flex-col gap-4 rounded-2xl bg-black/[0.03] p-6">
+              <h3 className="text-xl font-bold text-black">{card.title}</h3>
+              <p className="flex-1 text-sm font-medium text-black">{card.description}</p>
+              <PlaceholderVisual label={card.visualLabel} tone="light" className="h-32" />
+              <Button href={card.ctaHref} variant="dark" className="w-fit">
+                {card.ctaLabel}
+              </Button>
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>

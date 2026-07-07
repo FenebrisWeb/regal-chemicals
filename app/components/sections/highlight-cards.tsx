@@ -1,5 +1,7 @@
 import Button from "@/app/components/ui/button";
 import PlaceholderVisual from "@/app/components/ui/placeholder-visual";
+import AmbientBubbles from "@/app/components/ui/ambient-bubbles";
+import Reveal from "@/app/components/ui/reveal";
 
 interface HighlightCard {
   eyebrow: string;
@@ -32,26 +34,27 @@ const CARDS: HighlightCard[] = [
 
 export default function HighlightCards() {
   return (
-    <section className="bg-white py-16">
-      <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-2">
-        {CARDS.map((card) => (
-          <article
-            key={card.title}
-            className="overflow-hidden rounded-2xl bg-black/[0.03]"
-          >
-            <PlaceholderVisual label={card.visualLabel} tone="brand" className="h-64 rounded-none border-none sm:h-80" />
+    <section className="relative overflow-hidden bg-white py-16">
+      <AmbientBubbles tone="brand" className="opacity-60" />
 
-            <div className="flex flex-col gap-4 p-8">
-              <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">
-                {card.eyebrow}
-              </span>
-              <h3 className="text-2xl font-bold text-black">{card.title}</h3>
-              {card.description && <p className="text-sm font-medium text-black">{card.description}</p>}
-              <Button href={card.ctaHref} variant="dark" className="w-fit">
-                {card.ctaLabel}
-              </Button>
-            </div>
-          </article>
+      <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-2">
+        {CARDS.map((card, index) => (
+          <Reveal key={card.title} delayMs={index * 120}>
+            <article className="overflow-hidden rounded-2xl bg-black/[0.03]">
+              <PlaceholderVisual label={card.visualLabel} tone="brand" className="h-64 rounded-none border-none sm:h-80" />
+
+              <div className="flex flex-col gap-4 p-8">
+                <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">
+                  {card.eyebrow}
+                </span>
+                <h3 className="text-2xl font-bold text-black">{card.title}</h3>
+                {card.description && <p className="text-sm font-medium text-black">{card.description}</p>}
+                <Button href={card.ctaHref} variant="dark" className="w-fit">
+                  {card.ctaLabel}
+                </Button>
+              </div>
+            </article>
+          </Reveal>
         ))}
       </div>
     </section>
