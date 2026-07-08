@@ -22,6 +22,20 @@ export interface ContactPoint {
   href: string;
 }
 
+export interface ProductSpec {
+  label: string;
+  value: string;
+}
+
+export interface Product {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  specs: ProductSpec[];
+  packaging: string;
+}
+
 export interface JobOpening {
   slug: string;
   title: string;
