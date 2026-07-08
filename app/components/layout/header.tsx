@@ -48,6 +48,7 @@ const NAV_LINKS: NavLink[] = [
       { label: "Repair and Protect Layer Systems", href: "/systems/repair-and-protect-layer" },
       { label: "Road Marking Layer Systems", href: "/systems/road-marking-layer" },
       { label: "Sports Layer Systems", href: "/systems/sports-layer" },
+      { label: "Textures Layer Systems", href: "/systems/textures-layer" },
       { label: "Waterproofing Layer Systems", href: "/systems/waterproofing-layer" },
     ],
   },

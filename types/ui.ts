@@ -69,3 +69,18 @@ export interface TextFeatureProps {
   visualLabel: string;
   reverse?: boolean;
 }
+
+export interface SystemGridItem {
+  slug: string;
+  name: string;
+  description: string;
+  systemsHref: string;
+  productsHref: string;
+}
+
+export interface SystemGridProps {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: SystemGridItem[];
+}
