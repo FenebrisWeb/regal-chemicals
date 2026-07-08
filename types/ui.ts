@@ -83,4 +83,5 @@ export interface SystemGridProps {
   title: string;
   description?: string;
   items: SystemGridItem[];
+  ctaLabel?: string;
 }

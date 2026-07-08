@@ -6,7 +6,7 @@ import Reveal from "@/app/components/ui/reveal";
 import type { SystemGridProps } from "@/types/ui";
 import type { SystemIconName } from "@/app/components/ui/system-icon";
 
-export default function SystemGrid({ eyebrow, title, description, items }: SystemGridProps) {
+export default function SystemGrid({ eyebrow, title, description, items, ctaLabel = "Explore System" }: SystemGridProps) {
   return (
     <section className="relative overflow-hidden bg-white py-16">
       <AmbientBubbles tone="brand" className="opacity-60" />
@@ -24,7 +24,7 @@ export default function SystemGrid({ eyebrow, title, description, items }: Syste
                 <h3 className="text-lg font-bold text-black">{item.name}</h3>
                 <p className="flex-1 text-sm font-medium text-black">{item.description}</p>
                 <Button href={item.systemsHref} variant="dark" className="w-fit">
-                  Explore System
+                  {ctaLabel}
                 </Button>
               </div>
             </Reveal>

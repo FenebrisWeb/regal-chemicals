@@ -22,6 +22,18 @@ export interface ContactPoint {
   href: string;
 }
 
+export interface JobOpening {
+  slug: string;
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  experience: string;
+  description: string;
+  responsibilities: string[];
+  requirements: string[];
+}
+
 export interface HeroSlide {
   title: string;
   subtitle: string;
