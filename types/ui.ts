@@ -29,3 +29,43 @@ export interface RevealProps {
   /** Stagger delay in milliseconds, useful for sequencing sibling reveals. */
   delayMs?: number;
 }
+
+export interface PageHeroProps {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+}
+
+export type ValueIconName =
+  | "trust"
+  | "innovation"
+  | "sustainability"
+  | "quality"
+  | "customer"
+  | "operations"
+  | "growth"
+  | "manufacturing"
+  | "analytics";
+
+export interface PillarItem {
+  icon: ValueIconName;
+  title: string;
+  description: string;
+}
+
+export interface PillarGridProps {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  items: PillarItem[];
+  columns?: 3 | 4;
+  tone?: "light" | "dark";
+}
+
+export interface TextFeatureProps {
+  eyebrow?: string;
+  title: string;
+  paragraphs: string[];
+  visualLabel: string;
+  reverse?: boolean;
+}

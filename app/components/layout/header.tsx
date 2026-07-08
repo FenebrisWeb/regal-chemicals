@@ -1,6 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import type { NavLink } from "@/types/layout";
+
+function isLinkActive(pathname: string, href: string) {
+  if (href === "/") return pathname === "/";
+  return pathname === href || pathname.startsWith(`${href}/`);
+}
 
 const NAV_LINKS: NavLink[] = [
   { label: "Home", href: "/" },
@@ -70,6 +78,8 @@ const NAV_LINKS: NavLink[] = [
 ];
 
 export default function Header() {
+  const pathname = usePathname();
+
   return (
     <header className="sticky top-0 z-50 border-b border-black/10 bg-white">
       {/* chemical reaction accent: bubbles rising through the header band */}
@@ -94,48 +104,64 @@ export default function Header() {
 
         <nav className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {NAV_LINKS.map((link) => (
-              <li key={link.href} className="group relative">
-                <Link
-                  href={link.href}
-                  className="flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-semibold text-black transition-colors hover:text-[#2596be]"
-                >
-                  {link.label}
-                  {link.children && (
-                    <svg
-                      viewBox="0 0 12 8"
-                      className="h-2.5 w-2.5 transition-transform duration-200 group-hover:rotate-180"
-                      fill="none"
-                    >
-                      <path
-                        d="M1 1.5L6 6.5L11 1.5"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                  )}
-                </Link>
+            {NAV_LINKS.map((link) => {
+              const active = isLinkActive(pathname, link.href);
 
-                {link.children && (
-                  <ul
-                    className="invisible absolute left-0 top-full z-50 min-w-56 -translate-y-1 rounded-lg border border-black/10 bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100"
+              return (
+                <li key={link.href} className="group relative">
+                  <Link
+                    href={link.href}
+                    aria-current={active ? "page" : undefined}
+                    className={`flex items-center gap-1 rounded-md px-3 py-2 text-[15px] font-semibold transition-colors hover:text-[#2596be] ${
+                      active ? "text-[#2596be]" : "text-black"
+                    }`}
                   >
-                    {link.children.map((child) => (
-                      <li key={child.href}>
-                        <Link
-                          href={child.href}
-                          className="block px-4 py-2 text-sm font-semibold text-black transition-colors hover:bg-[#07245a]/5 hover:text-[#2596be]"
-                        >
-                          {child.label}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))}
+                    {link.label}
+                    {link.children && (
+                      <svg
+                        viewBox="0 0 12 8"
+                        className="h-2.5 w-2.5 transition-transform duration-200 group-hover:rotate-180"
+                        fill="none"
+                      >
+                        <path
+                          d="M1 1.5L6 6.5L11 1.5"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    )}
+                  </Link>
+
+                  {active && (
+                    <span className="absolute inset-x-3 -bottom-[1px] h-0.5 rounded-full bg-[#2596be]" />
+                  )}
+
+                  {link.children && (
+                    <ul className="invisible absolute left-0 top-full z-50 min-w-56 -translate-y-1 rounded-lg border border-black/10 bg-white py-2 opacity-0 shadow-lg transition-all duration-150 group-hover:visible group-hover:translate-y-0 group-hover:opacity-100">
+                      {link.children.map((child) => {
+                        const childActive = isLinkActive(pathname, child.href);
+
+                        return (
+                          <li key={child.href}>
+                            <Link
+                              href={child.href}
+                              aria-current={childActive ? "page" : undefined}
+                              className={`block px-4 py-2 text-sm font-semibold transition-colors hover:bg-[#07245a]/5 hover:text-[#2596be] ${
+                                childActive ? "bg-[#07245a]/5 text-[#2596be]" : "text-black"
+                              }`}
+                            >
+                              {child.label}
+                            </Link>
+                          </li>
+                        );
+                      })}
+                    </ul>
+                  )}
+                </li>
+              );
+            })}
           </ul>
         </nav>
 
