@@ -58,6 +58,107 @@ body {
   transform: translateY(0) scale(1);
 }
 
+/* Subtle grid line texture, faded toward the edges, used by <PageHero />. */
+.hero-grid-lines {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+  background-size: 44px 44px;
+  -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+  mask-image: radial-gradient(ellipse at center, black 40%, transparent 78%);
+}
+
+/* Glow that orbits behind the hero content, used by <PageHero />. */
+.hero-orbit-wrap {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  animation: hero-orbit-spin 16s linear infinite;
+}
+
+@keyframes hero-orbit-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.hero-orbit-glow {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(50px);
+  transform: translate(160px, 0);
+}
+
+/* Shimmering gradient text for the hero title, used by <PageHero />. */
+.hero-shimmer-text {
+  background-image: linear-gradient(100deg, #ffffff 20%, #67e8f9 40%, #ffffff 55%, #2596be 70%, #ffffff 85%);
+  background-size: 250% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: hero-shimmer-move 7s linear infinite;
+}
+
+@keyframes hero-shimmer-move {
+  to {
+    background-position: -250% center;
+  }
+}
+
+/* Infinite scrolling credibility marquee, used by <PageHero />. */
+.hero-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: hero-marquee-scroll 22s linear infinite;
+}
+
+@keyframes hero-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Eyebrow status dot, used by <PageHero />. */
+.hero-dot {
+  animation: hero-dot-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes hero-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+/* Underline bar that grows under the hero title, used by <PageHero />. */
+.hero-underline {
+  animation: hero-underline-grow 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both;
+}
+
+@keyframes hero-underline-grow {
+  from {
+    width: 0;
+    opacity: 0;
+  }
+  to {
+    width: 64px;
+    opacity: 1;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -68,5 +169,22 @@ body {
   .ambient-bubble {
     animation: none;
     display: none;
+  }
+
+  .hero-orbit-wrap,
+  .hero-shimmer-text,
+  .hero-marquee-track,
+  .hero-dot,
+  .hero-underline {
+    animation: none;
+  }
+
+  .hero-shimmer-text {
+    background-position: 0 center;
+  }
+
+  .hero-underline {
+    width: 64px;
+    opacity: 1;
   }
 }
