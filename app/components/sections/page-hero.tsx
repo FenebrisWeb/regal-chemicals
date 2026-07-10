@@ -1,4 +1,5 @@
 import Reveal from "@/app/components/ui/reveal";
+import MouseSpotlight from "@/app/components/ui/mouse-spotlight";
 import type { PageHeroProps } from "@/types/ui";
 
 const MARQUEE_ITEMS = [
@@ -22,6 +23,8 @@ export default function PageHero({ eyebrow, title, description }: PageHeroProps)
           <span className="hero-orbit-glow h-56 w-56 bg-[#67e8f9]/50" />
         </div>
       </div>
+
+      <MouseSpotlight />
 
       <div className="relative mx-auto flex max-w-3xl flex-col items-center gap-5 px-6 text-center">
         {eyebrow && (
