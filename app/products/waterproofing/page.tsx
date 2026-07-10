@@ -30,7 +30,7 @@ export default function WaterproofingProductsPage() {
         ]}
       />
 
-      <ProductGrid items={PRODUCTS["waterproofing"]} />
+      <ProductGrid items={PRODUCTS["waterproofing"]} category="waterproofing" />
 
       <PillarGrid
         eyebrow="Built for Tenders"

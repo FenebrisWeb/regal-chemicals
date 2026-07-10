@@ -34,6 +34,7 @@ export interface Product {
   description: string;
   specs: ProductSpec[];
   packaging: string;
+  featured?: boolean;
 }
 
 export interface JobOpening {

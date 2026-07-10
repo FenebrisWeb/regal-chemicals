@@ -30,7 +30,7 @@ export default function RoadMarkingProductsPage() {
         ]}
       />
 
-      <ProductGrid items={PRODUCTS["road-marking"]} />
+      <ProductGrid items={PRODUCTS["road-marking"]} category="road-marking" />
 
       <PillarGrid
         eyebrow="Built for Tenders"

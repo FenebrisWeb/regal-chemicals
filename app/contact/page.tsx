@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import PageHero from "@/app/components/sections/page-hero";
 import ContactForm from "@/app/components/sections/contact-form";
 import ContactInfo from "@/app/components/sections/contact-info";
@@ -53,7 +54,9 @@ export default function ContactPage() {
 
         <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-8 px-6 lg:grid-cols-[1.4fr_1fr]">
           <Reveal>
-            <ContactForm />
+            <Suspense fallback={null}>
+              <ContactForm />
+            </Suspense>
           </Reveal>
 
           <Reveal delayMs={120}>

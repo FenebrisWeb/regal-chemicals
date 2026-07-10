@@ -2,6 +2,7 @@ import Hero from "@/app/components/sections/hero";
 import BrandTrust from "@/app/components/sections/brand-trust";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import HighlightCards from "@/app/components/sections/highlight-cards";
+import ProductCarousel from "@/app/components/sections/product-carousel";
 import FeatureCards from "@/app/components/sections/feature-cards";
 import RecentPosts from "@/app/components/sections/recent-posts";
 import CareersCta from "@/app/components/sections/careers-cta";
@@ -24,6 +25,7 @@ export default function Home() {
         secondaryHref="/products"
       /> */}
       <HighlightCards />
+      <ProductCarousel />
       <Reveal>
         <CareersCta />
       </Reveal>

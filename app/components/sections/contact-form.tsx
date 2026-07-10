@@ -1,5 +1,6 @@
 "use client";
 
+import { useSearchParams } from "next/navigation";
 import { useState } from "react";
 
 const SUBJECTS = [
@@ -11,12 +12,15 @@ const SUBJECTS = [
 ];
 
 export default function ContactForm() {
+  const searchParams = useSearchParams();
+  const product = searchParams.get("product");
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
     subject: SUBJECTS[0],
-    message: "",
+    message: product ? `I would like more information about ${product}.` : "",
   });
   const [submitted, setSubmitted] = useState(false);
 

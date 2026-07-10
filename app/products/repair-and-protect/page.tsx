@@ -30,7 +30,7 @@ export default function RepairAndProtectProductsPage() {
         ]}
       />
 
-      <ProductGrid items={PRODUCTS["repair-and-protect"]} />
+      <ProductGrid items={PRODUCTS["repair-and-protect"]} category="repair-and-protect" />
 
       <PillarGrid
         eyebrow="Built for Tenders"

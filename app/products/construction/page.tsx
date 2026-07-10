@@ -30,7 +30,7 @@ export default function ConstructionProductsPage() {
         ]}
       />
 
-      <ProductGrid items={PRODUCTS["construction"]} />
+      <ProductGrid items={PRODUCTS["construction"]} category="construction" />
 
       <PillarGrid
         eyebrow="Built for Tenders"

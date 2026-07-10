@@ -1,9 +1,7 @@
 import type { ContactPoint } from "@/types/sections";
 
-// Demo placeholder data, to be replaced with real contact details later.
 export const PHONE_NUMBERS: ContactPoint[] = [
-  { label: "Phone", value: "+1 555 010 2020", href: "tel:+15550102020" },
-  { label: "Phone", value: "+1 555 010 2021", href: "tel:+15550102021" },
+  { label: "Phone", value: "+44 7887 122334", href: "tel:+447887122334" },
 ];
 
 export const EMAILS: ContactPoint[] = [
@@ -13,5 +11,5 @@ export const EMAILS: ContactPoint[] = [
 
 export const POSTAL_ADDRESS = {
   company: "Regal Chemicals",
-  lines: ["123 Demo Business Park", "Suite 400", "Springfield, ST 12345", "United States"],
+  lines: ["Globe House", "55 Calthorpe Street", "Banbury OX16 5EX", "United Kingdom"],
 };

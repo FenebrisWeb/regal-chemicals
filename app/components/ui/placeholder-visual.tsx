@@ -8,10 +8,6 @@ const TONE_OVERLAY: Record<NonNullable<PlaceholderVisualProps["tone"]>, string> 
   brand: "from-[#07245a]/70",
 };
 
-/**
- * Demo photography stand-in via picsum.photos, seeded so the same label
- * always resolves to the same image. Swap for real assets when available.
- */
 export default function PlaceholderVisual({
   label,
   className = "",
@@ -24,7 +20,7 @@ export default function PlaceholderVisual({
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-black/10 ${className}`}>
       <Image
-        src={`https://picsum.photos/seed/${imageSeed}/800/600`}
+        src={`/images/placeholders/${imageSeed}.jpg`}
         alt={label}
         fill
         sizes="(min-width: 1024px) 33vw, 100vw"

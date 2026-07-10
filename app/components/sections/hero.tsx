@@ -60,7 +60,7 @@ export default function Hero() {
             >
               <div className="relative min-h-[240px] flex-1 overflow-hidden sm:min-h-[320px] md:min-h-0 md:basis-1/2">
                 <Image
-                  src={`https://picsum.photos/seed/${slugify(slide.visualLabel)}/1200/900`}
+                  src={`/images/placeholders/${slugify(slide.visualLabel)}.jpg`}
                   alt={slide.visualLabel}
                   fill
                   priority={index === 0}

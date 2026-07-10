@@ -15,7 +15,7 @@ export default function CtaStrip({
     <section className="bg-white py-10">
       <div className="relative mx-auto max-w-6xl overflow-hidden rounded-3xl">
         <Image
-          src={`https://picsum.photos/seed/${slugify(title)}/1600/700`}
+          src={`/images/placeholders/${slugify(title)}.jpg`}
           alt=""
           fill
           sizes="(min-width: 1024px) 1152px, 100vw"

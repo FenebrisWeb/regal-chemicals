@@ -457,6 +457,21 @@ export const PRODUCTS: Record<string, Product[]> = {
   ],
   sports: [
     {
+      slug: "regal-acrylic-resurfacer-sf-101",
+      name: "Regal Acrylic Resurfacer SF 101",
+      tagline: "Textured acrylic resurfacer for sports courts and pathways",
+      description:
+        "A silica filled, water based acrylic resurfacer that builds a textured, uniform base over asphalt or concrete, correcting surface irregularities and providing consistent slip resistance ahead of the colour coat on tennis, basketball, and multipurpose courts.",
+      specs: [
+        { label: "Texture", value: "Fine to medium silica filled texture" },
+        { label: "Application", value: "Squeegee applied, 2 to 3 coats" },
+        { label: "Coverage", value: "Approximately 1.5 to 2 kg per m² per coat" },
+        { label: "Drying Time", value: "2 to 4 hours between coats" },
+      ],
+      packaging: "20 kg pails",
+      featured: true,
+    },
+    {
       slug: "regal-court-base-acrylic",
       name: "Regal CourtBase Acrylic",
       tagline: "Levelling base coat for acrylic sports surfaces",
