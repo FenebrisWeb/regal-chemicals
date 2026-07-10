@@ -24,9 +24,10 @@ export default function PillarGrid({ eyebrow, title, description, items, columns
                 }`}
               >
                 <span
-                  className={`flex h-12 w-12 items-center justify-center rounded-xl ${
+                  className={`icon-loop-bob flex h-12 w-12 items-center justify-center rounded-xl ${
                     isDark ? "bg-white/10 text-white" : "bg-[#2596be]/10 text-[#2596be]"
                   }`}
+                  style={{ animationDelay: `${(index % 4) * 0.3}s` }}
                 >
                   <ValueIcon name={item.icon} className="h-6 w-6" />
                 </span>

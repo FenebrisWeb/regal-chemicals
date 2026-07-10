@@ -18,7 +18,10 @@ export default function SystemGrid({ eyebrow, title, description, items, ctaLabe
           {items.map((item, index) => (
             <Reveal key={item.slug} delayMs={index * 80}>
               <div className="flex h-full flex-col gap-4 rounded-2xl bg-black/[0.03] p-6">
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#2596be]/10 text-[#2596be]">
+                <span
+                  className="icon-loop-bob flex h-12 w-12 items-center justify-center rounded-xl bg-[#2596be]/10 text-[#2596be]"
+                  style={{ animationDelay: `${(index % 4) * 0.3}s` }}
+                >
                   <SystemIcon name={item.slug as SystemIconName} className="h-6 w-6" />
                 </span>
                 <h3 className="text-lg font-bold text-black">{item.name}</h3>

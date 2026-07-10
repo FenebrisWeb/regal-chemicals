@@ -159,6 +159,36 @@ body {
   }
 }
 
+/* Gentle looping bob, used on icon badges site-wide (Material-style idle motion). */
+.icon-loop-bob {
+  animation: icon-loop-bob 3.2s ease-in-out infinite;
+}
+
+@keyframes icon-loop-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+/* Soft looping pulse ring, used on "Featured" badges. */
+.badge-loop-pulse {
+  animation: badge-loop-pulse 2.4s ease-in-out infinite;
+}
+
+@keyframes badge-loop-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.45);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal {
     opacity: 1;
@@ -175,7 +205,9 @@ body {
   .hero-shimmer-text,
   .hero-marquee-track,
   .hero-dot,
-  .hero-underline {
+  .hero-underline,
+  .icon-loop-bob,
+  .badge-loop-pulse {
     animation: none;
   }
 

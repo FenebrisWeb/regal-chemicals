@@ -25,7 +25,7 @@ export default function ProductGrid({ items, category }: ProductGridProps) {
                   className="object-cover"
                 />
                 {product.featured && (
-                  <span className="absolute left-2 top-2 rounded-full bg-[#2596be] px-3 py-1 text-xs font-bold text-white">
+                  <span className="badge-loop-pulse absolute left-2 top-2 rounded-full bg-[#2596be] px-3 py-1 text-xs font-bold text-white">
                     Featured
                   </span>
                 )}
