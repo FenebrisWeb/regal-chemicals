@@ -13,3 +13,9 @@ export const POSTAL_ADDRESS = {
   company: "Regal Chemicals",
   lines: ["Globe House", "55 Calthorpe Street", "Banbury OX16 5EX", "United Kingdom"],
 };
+
+export function getEnquiryMailto(productName: string) {
+  const subject = `Product Enquiry: ${productName}`;
+  const body = `Hi Regal Chemicals team,\n\nI would like more information about ${productName}.\n\n`;
+  return `mailto:${EMAILS[0].value}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}

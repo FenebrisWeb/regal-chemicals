@@ -2,6 +2,7 @@ import Image from "next/image";
 import Reveal from "@/app/components/ui/reveal";
 import Button from "@/app/components/ui/button";
 import { getProductImage } from "@/app/data/product-images";
+import { getEnquiryMailto } from "@/app/data/contact";
 import type { Product } from "@/types/sections";
 
 interface ProductGridProps {
@@ -53,7 +54,7 @@ export default function ProductGrid({ items, category }: ProductGridProps) {
                   ))}
                 </div>
 
-                <Button href={`/contact?product=${encodeURIComponent(product.name)}`} variant="dark" className="w-fit">
+                <Button href={getEnquiryMailto(product.name)} variant="dark" className="w-fit">
                   Send Enquiry
                 </Button>
               </div>

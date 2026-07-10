@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/app/components/ui/button";
 import { getProductImage } from "@/app/data/product-images";
+import { getEnquiryMailto } from "@/app/data/contact";
 import type { Product } from "@/types/sections";
 
 interface ProductCarouselTrackProps {
@@ -91,7 +92,7 @@ export default function ProductCarouselTrack({ items }: ProductCarouselTrackProp
             <p className="text-sm font-medium text-black/70">{product.tagline}</p>
           </div>
 
-          <Button href={`/contact?product=${encodeURIComponent(product.name)}`} variant="dark" className="w-fit">
+          <Button href={getEnquiryMailto(product.name)} variant="dark" className="w-fit">
             Send Enquiry
           </Button>
         </article>

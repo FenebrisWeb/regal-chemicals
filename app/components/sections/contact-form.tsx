@@ -2,6 +2,7 @@
 
 import { useSearchParams } from "next/navigation";
 import { useState } from "react";
+import { EMAILS } from "@/app/data/contact";
 
 const SUBJECTS = [
   "General Inquiry",
@@ -34,6 +35,12 @@ export default function ContactForm() {
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
     if (!formData.name || !formData.email || !formData.message) return;
+
+    const recipient = formData.subject === "Technical Support" ? EMAILS[1].value : EMAILS[0].value;
+    const body = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone || "Not provided"}\n\n${formData.message}`;
+    const mailtoUrl = `mailto:${recipient}?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailtoUrl;
+
     setSubmitted(true);
   }
 
