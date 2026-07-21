@@ -25,6 +25,7 @@ export default function FloorsLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Floors System"
+        visualSrc="/images/SystemImages/Floors-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

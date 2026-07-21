@@ -25,6 +25,7 @@ export default function AnticorrosionLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Anticorrosion System"
+        visualSrc="/images/SystemImages/Anticorrosion-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

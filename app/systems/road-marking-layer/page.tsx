@@ -25,6 +25,7 @@ export default function RoadMarkingLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Road Marking System"
+        visualSrc="/images/SystemImages/Road-Marking-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

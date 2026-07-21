@@ -25,6 +25,7 @@ export default function WaterproofingLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Waterproofing System"
+        visualSrc="/images/SystemImages/Waterproofing-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

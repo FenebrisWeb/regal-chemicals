@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Repair and Protect Products",
@@ -24,6 +25,7 @@ export default function RepairAndProtectProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Restoration Backed by Structural Test Data"
         visualLabel="Repair and Protect Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["repair-and-protect"]}
         paragraphs={[
           "Restoration tenders are frequently reviewed against compressive strength, bond strength to existing concrete, and shrinkage figures, since the repair needs to perform as well as the original structure. Every product in this range is tested against a fixed specification to support that review.",
           "Our technical team assists with method statements and on-site guidance, helping restoration contractors meet the standard evaluators expect from a structural repair scope.",

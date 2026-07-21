@@ -23,6 +23,7 @@ export default function BrandPage() {
         eyebrow="Our Identity"
         title="More Than a Name on the Label"
         visualLabel="Regal Chemicals"
+        visualSrc="/images/AboutPage/Regal's-Brand.webp"
         paragraphs={[
           "A strong brand is more than just a logo or a product name, it is the identity and reputation that define a company in the marketplace. Regal has earned trust in the construction and manufacturing sectors through high-quality, sustainable, and affordable solutions.",
           "Our name reflects our philosophy: continuity and forward-thinking, a promise of reliability and performance. That founding vision, centered on cutting-edge construction chemical solutions, has guided everything we've built since.",

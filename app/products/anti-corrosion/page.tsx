@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Anti Corrosion Products",
@@ -24,6 +25,7 @@ export default function AntiCorrosionProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Specification Figures That Hold Up to Review"
         visualLabel="Anti Corrosion Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["anti-corrosion"]}
         paragraphs={[
           "Anticorrosion tenders are usually scored against dry film thickness, zinc content, and salt spray resistance figures. Every product in this range is manufactured to a fixed specification, so the numbers in your submission match what actually gets applied on site.",
           "Beyond the data sheet, our technical team supports specification review and site application guidance, reducing the risk of a coating system being flagged during inspection.",

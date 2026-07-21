@@ -2,7 +2,14 @@ import PlaceholderVisual from "@/app/components/ui/placeholder-visual";
 import Reveal from "@/app/components/ui/reveal";
 import type { TextFeatureProps } from "@/types/ui";
 
-export default function TextFeature({ eyebrow, title, paragraphs, visualLabel, reverse = false }: TextFeatureProps) {
+export default function TextFeature({
+  eyebrow,
+  title,
+  paragraphs,
+  visualLabel,
+  visualSrc,
+  reverse = false,
+}: TextFeatureProps) {
   return (
     <section className="bg-white py-16">
       <div
@@ -11,7 +18,7 @@ export default function TextFeature({ eyebrow, title, paragraphs, visualLabel, r
         }`}
       >
         <Reveal className={reverse ? "md:[direction:ltr]" : ""}>
-          <PlaceholderVisual label={visualLabel} tone="brand" className="h-72 sm:h-96" />
+          <PlaceholderVisual label={visualLabel} tone="brand" className="h-72 sm:h-96" src={visualSrc} />
         </Reveal>
 
         <Reveal delayMs={120} className={reverse ? "md:[direction:ltr]" : ""}>

@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Road Marking Products",
@@ -24,6 +25,7 @@ export default function RoadMarkingProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Retroreflectivity and Durability Evaluators Can Check"
         visualLabel="Road Marking Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["road-marking"]}
         paragraphs={[
           "Road marking contracts, particularly government and municipal tenders, are commonly evaluated against retroreflectivity, drying time, and expected service life under traffic. Every product in this range is manufactured to a fixed specification supporting that evaluation.",
           "Our technical team supports application planning and specification queries, helping contractors meet the standard road authorities expect before work is approved to begin.",

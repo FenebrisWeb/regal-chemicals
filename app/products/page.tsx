@@ -33,6 +33,7 @@ export default function ProductsPage() {
         eyebrow="Why It Matters"
         title="Tenders Are Won on Proof, Not Just Price"
         visualLabel="Regal Products"
+        visualSrc="/images/products/productimages.webp"
         paragraphs={[
           "Government and institutional tenders are increasingly evaluated on documented performance, not just the lowest bid. Evaluators want to see consistent specifications, verifiable test data, and a supplier who can deliver the same quality across the full order, not just the sample submitted for approval.",
           "Regal builds every product range around that expectation. Specifications are fixed, batch tested, and backed by a Technical Data Sheet and Material Safety Data Sheet available on request, so your submission holds up through every stage of evaluation.",

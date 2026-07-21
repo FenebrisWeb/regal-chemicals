@@ -14,13 +14,14 @@ export default function PlaceholderVisual({
   tone = "light",
   seed,
   showLabel = true,
+  src,
 }: PlaceholderVisualProps) {
   const imageSeed = seed ?? slugify(label);
 
   return (
     <div className={`relative overflow-hidden rounded-2xl border border-black/10 ${className}`}>
       <Image
-        src={`/images/placeholders/${imageSeed}.jpg`}
+        src={src ?? `/images/placeholders/${imageSeed}.jpg`}
         alt={label}
         fill
         sizes="(min-width: 1024px) 33vw, 100vw"

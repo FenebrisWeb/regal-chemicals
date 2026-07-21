@@ -23,6 +23,7 @@ export default function ProcurementPage() {
         eyebrow="Beyond Sourcing"
         title="Procurement as a Strategic Function"
         visualLabel="Our Procurement"
+        visualSrc="/images/AboutPage/Our-Procurement.webp"
         paragraphs={[
           "Procurement at Regal is more than just acquiring raw materials, it is a strategic function that ensures quality, sustainability, and efficiency across our entire supply chain.",
           "From reliable material supply and cost optimization to supplier evaluation and risk management, every procurement decision is held to a supplier code of conduct built around integrity, safety, and continuous improvement.",

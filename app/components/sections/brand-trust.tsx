@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import Button from "@/app/components/ui/button";
 import SectionHeading from "@/app/components/ui/section-heading";
 import SystemIcon, { type SystemIconName } from "@/app/components/ui/system-icon";
@@ -13,12 +14,25 @@ export default function BrandTrust() {
   return (
     <section className="bg-white py-20">
       <div className="mx-auto flex max-w-6xl flex-col gap-12 px-6">
-        <SectionHeading
-          eyebrow="Regal Chemicals"
-          title="A Brand Built on Trust, Driven by Innovation"
-          description="Regal stands as a symbol of reliability in the construction chemicals industry, delivering certified, high-performance solutions across diverse applications, backed by years of expertise and continuous innovation."
-          align="center"
-        />
+        <div className="flex flex-col items-center gap-8 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
+          <div className="lg:flex-1">
+            <SectionHeading
+              eyebrow="Regal Chemicals"
+              title="A Brand Built on Trust, Driven by Innovation"
+              description="Regal stands as a symbol of reliability in the construction chemicals industry, delivering certified, high-performance solutions across diverse applications, backed by years of expertise and continuous innovation."
+              align="center"
+            />
+          </div>
+          <div className="relative hidden h-48 w-72 shrink-0 overflow-hidden rounded-2xl lg:block">
+            <Image
+              src="/images/HomePage/A-Brand-Built-on-Trust,-Powered-by-Innovation.webp"
+              alt="A Brand Built on Trust, Powered by Innovation"
+              fill
+              sizes="288px"
+              className="object-cover"
+            />
+          </div>
+        </div>
 
         <div className="flex flex-col gap-8 lg:flex-row lg:gap-12">
           <div className="flex gap-2 overflow-x-auto pb-2 lg:w-64 lg:shrink-0 lg:flex-col lg:gap-1.5 lg:overflow-visible lg:pb-0">

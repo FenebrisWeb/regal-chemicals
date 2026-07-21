@@ -25,6 +25,7 @@ export default function ConstructionLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Construction System"
+        visualSrc="/images/SystemImages/Construction-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

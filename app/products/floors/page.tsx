@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Floors Products",
@@ -24,6 +25,7 @@ export default function FloorsProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Performance Data Matched to Real Traffic Loads"
         visualLabel="Floors Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["floors"]}
         paragraphs={[
           "Flooring tenders are usually scored against compressive strength, chemical resistance, and recommended film thickness for the intended traffic. Every product in this range is manufactured to a fixed specification, so the figures in your submission are exactly what gets installed.",
           "Our technical team supports specification selection so the system proposed genuinely matches the facility's traffic and chemical exposure, reducing the risk of underperformance flagged during evaluation or after installation.",

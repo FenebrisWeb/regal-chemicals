@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Button from "@/app/components/ui/button";
 import { HERO_SLIDES } from "@/app/data/hero-slides";
-import { slugify } from "@/app/lib/slug";
 
 const AUTOPLAY_INTERVAL_MS = 6000;
 const SLIDE_COUNT = HERO_SLIDES.length;
@@ -60,7 +59,7 @@ export default function Hero() {
             >
               <div className="relative min-h-[240px] flex-1 overflow-hidden sm:min-h-[320px] md:min-h-0 md:basis-1/2">
                 <Image
-                  src={`/images/placeholders/${slugify(slide.visualLabel)}.jpg`}
+                  src={`/images/HomePage/hero-${index + 1}.webp`}
                   alt={slide.visualLabel}
                   fill
                   priority={index === 0}

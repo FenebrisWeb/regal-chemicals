@@ -25,6 +25,7 @@ export default function TexturesLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Textures System"
+        visualSrc="/images/SystemImages/Textures-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

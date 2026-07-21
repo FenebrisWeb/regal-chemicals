@@ -31,6 +31,7 @@ export default function AboutPage() {
         eyebrow="Our Brand"
         title="A Name Built on Reliability and Performance"
         visualLabel="Regal Chemicals"
+        visualSrc="/images/AboutPage/Regal's-Brand.webp"
         paragraphs={[
           "A strong brand is more than a logo or a product name, it is the identity and reputation that define a company in the marketplace. Regal has earned trust across the construction and manufacturing sectors through high-quality, sustainable, and affordable solutions.",
           "Our name reflects our philosophy: continuity and forward-thinking, a promise of reliability and performance. That vision, centered on cutting-edge construction chemical solutions, has guided every product we've brought to market.",

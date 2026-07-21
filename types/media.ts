@@ -6,4 +6,6 @@ export interface PlaceholderVisualProps {
   seed?: string;
   /** Show the label as a caption chip over the image. */
   showLabel?: boolean;
+  /** Explicit image path, overriding the seeded placeholder photo. */
+  src?: string;
 }

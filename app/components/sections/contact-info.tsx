@@ -10,7 +10,12 @@ export default function ContactInfo() {
 
       <div className="relative mx-auto grid max-w-6xl grid-cols-1 gap-6 px-6 md:grid-cols-3">
         <Reveal>
-          <PlaceholderVisual label="Contact Us" tone="brand" className="h-full min-h-[220px]" />
+          <PlaceholderVisual
+            label="Contact Us"
+            tone="brand"
+            className="h-full min-h-[220px]"
+            src="/images/HomePage/contact-us.webp"
+          />
         </Reveal>
 
         <Reveal delayMs={120} className="h-full">

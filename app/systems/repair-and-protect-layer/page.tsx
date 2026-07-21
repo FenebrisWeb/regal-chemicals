@@ -25,6 +25,7 @@ export default function RepairAndProtectLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Repair and Protect System"
+        visualSrc="/images/SystemImages/Repair-and-Protect-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 

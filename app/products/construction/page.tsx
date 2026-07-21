@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Construction Products",
@@ -24,6 +25,7 @@ export default function ConstructionProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Bond Strength Figures Backed by Testing"
         visualLabel="Construction Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["construction"]}
         paragraphs={[
           "Construction material tenders are typically evaluated against bond strength, setting time, and compressive strength figures. Every product in this range is batch tested against a fixed specification, so evaluators can trust the numbers submitted match the material delivered.",
           "Our technical team is available to support structural consultants and procurement teams through specification review and site trials where required.",

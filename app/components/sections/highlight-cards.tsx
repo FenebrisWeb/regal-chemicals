@@ -10,6 +10,7 @@ interface HighlightCard {
   ctaLabel: string;
   ctaHref: string;
   visualLabel: string;
+  image: string;
 }
 
 const CARDS: HighlightCard[] = [
@@ -21,6 +22,7 @@ const CARDS: HighlightCard[] = [
     ctaLabel: "Learn More",
     ctaHref: "/about",
     visualLabel: "About Regal",
+    image: "/images/HomePage/A-Brand-Built-on-Trust,-Powered-by-Innovation.webp",
   },
   {
     eyebrow: "Journal",
@@ -29,6 +31,8 @@ const CARDS: HighlightCard[] = [
     ctaLabel: "Learn More",
     ctaHref: "/journal",
     visualLabel: "Journal",
+    image:
+      "/images/HomePage/Dive-into-expert-insights,-how-tos,-case-studies,-and-sustainability-notes-from-the-field..webp",
   },
 ];
 
@@ -41,7 +45,12 @@ export default function HighlightCards() {
         {CARDS.map((card, index) => (
           <Reveal key={card.title} delayMs={index * 120}>
             <article className="overflow-hidden rounded-2xl bg-black/[0.03]">
-              <PlaceholderVisual label={card.visualLabel} tone="brand" className="h-64 rounded-none border-none sm:h-80" />
+              <PlaceholderVisual
+                label={card.visualLabel}
+                tone="brand"
+                className="h-64 rounded-none border-none sm:h-80"
+                src={card.image}
+              />
 
               <div className="flex flex-col gap-4 p-8">
                 <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2596be]">

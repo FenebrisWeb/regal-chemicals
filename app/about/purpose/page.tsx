@@ -23,6 +23,7 @@ export default function PurposePage() {
         eyebrow="Why We Exist"
         title="Purpose-Driven, From Formula to Foundation"
         visualLabel="Our Purpose"
+        visualSrc="/images/AboutPage/Regal's-Purpose.webp"
         paragraphs={[
           "At Regal, our purpose is to deliver high-quality, innovative, and sustainable solutions that cater to the ever-evolving needs of the construction, building, and manufacturing industries.",
           "Every formulation we develop is built around a simple idea: infrastructure deserves products that are safe, durable, and dependable, backed by a team that takes that responsibility seriously.",

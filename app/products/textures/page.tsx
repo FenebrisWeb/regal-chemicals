@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Textures Products",
@@ -24,6 +25,7 @@ export default function TexturesProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Coverage and Weather Resistance Set Out Clearly"
         visualLabel="Textures Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["textures"]}
         paragraphs={[
           "Facade and finishing tenders typically call out coverage rate, drying time, and weather resistance for exterior render systems. Every product in this range is manufactured to a fixed specification, giving architects and consultants figures they can rely on.",
           "Our technical team supports colour matching, specification review, and application guidance for both new build and renovation facade projects.",

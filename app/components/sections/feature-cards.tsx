@@ -9,6 +9,7 @@ interface FeatureCard {
   ctaLabel: string;
   ctaHref: string;
   visualLabel: string;
+  image: string;
 }
 
 const CARDS: FeatureCard[] = [
@@ -19,6 +20,7 @@ const CARDS: FeatureCard[] = [
     ctaLabel: "Explore Products",
     ctaHref: "/products",
     visualLabel: "Products",
+    image: "/images/HomePage/Explore-Our-Products.webp",
   },
   {
     title: "Find Your Perfect System",
@@ -27,6 +29,7 @@ const CARDS: FeatureCard[] = [
     ctaLabel: "Explore Systems",
     ctaHref: "/systems",
     visualLabel: "Systems",
+    image: "/images/HomePage/Find-Your-Perfect-System.webp",
   },
   {
     title: "MSDS | Access Technical Documents",
@@ -35,6 +38,7 @@ const CARDS: FeatureCard[] = [
     ctaLabel: "Explore TDS & MSDS",
     ctaHref: "/documents",
     visualLabel: "Documents",
+    image: "/images/HomePage/MSDS--Access-Technical-Documents.webp",
   },
 ];
 
@@ -49,7 +53,7 @@ export default function FeatureCards() {
             <article className="flex h-full flex-col gap-4 rounded-2xl bg-black/[0.03] p-6">
               <h3 className="text-xl font-bold text-black">{card.title}</h3>
               <p className="flex-1 text-sm font-medium text-black">{card.description}</p>
-              <PlaceholderVisual label={card.visualLabel} tone="light" className="h-32" />
+              <PlaceholderVisual label={card.visualLabel} tone="light" className="h-32" src={card.image} />
               <Button href={card.ctaHref} variant="dark" className="w-fit">
                 {card.ctaLabel}
               </Button>

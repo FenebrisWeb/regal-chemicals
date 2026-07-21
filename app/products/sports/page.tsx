@@ -5,6 +5,7 @@ import ProductGrid from "@/app/components/sections/product-grid";
 import PillarGrid from "@/app/components/sections/pillar-grid";
 import CtaStrip from "@/app/components/sections/cta-strip";
 import { PRODUCTS, TENDER_ADVANTAGES } from "@/app/data/products";
+import { CATEGORY_FEATURE_IMAGE } from "@/app/data/product-images";
 
 export const metadata: Metadata = {
   title: "Sports Products",
@@ -24,6 +25,7 @@ export default function SportsProductsPage() {
         eyebrow="Why This Range Wins Tenders"
         title="Surface Performance Figures for Facility Approvals"
         visualLabel="Sports Products"
+        visualSrc={CATEGORY_FEATURE_IMAGE["sports"]}
         paragraphs={[
           "Sports facility tenders, especially those run through schools, municipalities, and sporting bodies, are typically scored against surface hardness, slip resistance, and coating thickness. Every product in this range is manufactured to a fixed specification supporting that scoring.",
           "Our technical team supports layer specification and application guidance, helping ensure the finished surface performs consistently for players, not just on the data sheet.",

@@ -67,6 +67,7 @@ export interface TextFeatureProps {
   title: string;
   paragraphs: string[];
   visualLabel: string;
+  visualSrc?: string;
   reverse?: boolean;
 }
 

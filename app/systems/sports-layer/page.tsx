@@ -25,6 +25,7 @@ export default function SportsLayerPage() {
         eyebrow="System Overview"
         title={DETAIL.overviewTitle}
         visualLabel="Sports System"
+        visualSrc="/images/SystemImages/Sports-Layer-System.webp"
         paragraphs={DETAIL.overviewParagraphs}
       />
 
